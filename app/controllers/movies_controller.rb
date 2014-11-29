@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
   before_action :set_movie, only: [:show, :like, :unlike]
+  before_action :set_ranking_movies
+  layout 'united'
 
   def index
     @movies = Movie.recent
@@ -45,6 +47,11 @@ class MoviesController < ApplicationController
     def set_movie
       @movie = Movie.find(params[:id])
     end
+
+    def set_ranking_movies
+      @ranking_movies = Movie.ranking
+    end
+
     def movie_params
       params.require(:movie).permit(:score)
     end

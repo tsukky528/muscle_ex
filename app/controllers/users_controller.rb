@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show_likes]
+  layout 'united'
 
-  def show
+  def show_likes
+    @ranking_movies = Movie.ranking
   end
 
   private

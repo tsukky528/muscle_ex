@@ -1,1 +1,1 @@
-| $("#like_form").append("#{escape_javascript(render('unlike', movie: @movie))}");
+| $("#like_form_#{@movie.id}").html("#{j(render('unlike', movie: @movie))}");

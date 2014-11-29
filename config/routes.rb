@@ -3,7 +3,14 @@ Rails.application.routes.draw do
   root :to => 'movies#index'
 
   devise_for :users
-  resources :users, :only => [:show]
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+  resources :users, :only => [] do
+    member do
+      get :show_likes
+    end
+  end
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

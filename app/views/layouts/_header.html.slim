@@ -35,11 +35,11 @@
             b.caret
           ul.dropdown-menu
             li
-              a[href=user_path(current_user)]
+              a[href=show_likes_user_path(current_user)]
                 | マイページ
-            li
-              a[href=edit_user_registration_path]
-                | アカウント編集
+            / li
+            /  a[href=edit_user_registration_path]
+            /    | アカウント編集
             li.divider
             li
               a[href=destroy_user_session_path]

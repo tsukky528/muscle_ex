@@ -8,11 +8,14 @@ br
             = movie.movie.html_safe
             br
             h4= movie.title
-            a[href="movies/#{movie.id}"]
+            a[href=movie_path(movie.id)]
               | 詳細
-            .movie-like
-              #like_form
-                - if current_user.like?(movie)
-                  = render 'unlike', movie: movie
-                - else
-                  = render 'like', movie: movie
+            br
+            br
+            - if signed_in?
+              .movie-like
+                div id="like_form_#{movie.id}"
+                  - if current_user.like?(movie)
+                    = render 'unlike', movie: movie
+                  - else
+                    = render 'like', movie: movie
