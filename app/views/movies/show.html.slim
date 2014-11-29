@@ -1,0 +1,9 @@
+h2= @movie.title
+br
+.content-recent
+  .container-fluid
+    .row-fluid
+      .movie-show-content
+        = @movie.movie.html_safe
+        br
+        = @movie.explain

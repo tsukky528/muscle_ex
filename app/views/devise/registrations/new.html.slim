@@ -1,0 +1,18 @@
+h2
+  | ユーザー登録
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = devise_error_messages!
+  .field
+    | メールアドレス
+    br
+    = f.email_field :email, autofocus: true
+  .field
+    | パスワード（8文字以上）
+    br
+    = f.password_field :password, autocomplete: "off"
+  .field
+    | パスワード確認
+    br
+    = f.password_field :password_confirmation, autocomplete: "off"
+  .actions
+    = f.submit "登録"

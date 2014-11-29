@@ -1,0 +1,4 @@
+= form_tag(like_movie_path(movie), remote: true) do
+  div
+    = hidden_field_tag :movie_id
+  = submit_tag("お気に入り登録", class: "btn btn-mini btn-primary")

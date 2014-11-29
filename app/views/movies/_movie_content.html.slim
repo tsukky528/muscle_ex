@@ -1,0 +1,18 @@
+br
+.content-recent
+  .container-fluid
+    .row-fluid
+      - @movies.each do |movie|
+        .col-md-6
+          .movie-content
+            = movie.movie.html_safe
+            br
+            h4= movie.title
+            a[href="movies/#{movie.id}"]
+              | 詳細
+            .movie-like
+              #like_form
+                - if current_user.like?(movie)
+                  = render 'unlike', movie: movie
+                - else
+                  = render 'like', movie: movie

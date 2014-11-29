@@ -1,0 +1,6 @@
+#like_form#{movie.id}
+- if current_user.like?(@movie)
+  - # binding.pry
+  = render 'unlike', movie: movie
+- else
+  = render 'like', movie: movie

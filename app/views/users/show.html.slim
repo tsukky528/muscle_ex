@@ -1,0 +1,18 @@
+h2 マイページ（お気に入り動画一覧）
+br
+.content-recent
+  .container-fluid
+    .row-fluid
+      - current_user.movies.each do |movie|
+        .col-md-6
+          .movie-content
+            = movie.movie.html_safe
+            br
+            h4= movie.title
+            a[href="movies/#{movie.id}"]
+              | 詳細
+            #like_form
+              - if current_user.like?(movie)
+                = render '/movies/unlike', movie: movie
+              - else
+                = render '/movies/like', movie: movie

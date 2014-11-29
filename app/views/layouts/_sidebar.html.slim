@@ -1,0 +1,13 @@
+.movie-sidebar
+  .row-fluid
+    .side-header
+      h4 お気に入りランキング
+    - @movies.ranking.each do |movie|
+      .side-content
+        .row-fluid
+          .col-md-5
+            .content-movie
+              = movie.movie.html_safe
+          .col-md-7
+            .content-text
+              = movie.title
