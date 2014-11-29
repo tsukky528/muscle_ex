@@ -21,7 +21,7 @@ class Movie < ActiveRecord::Base
     validates :muscle, presence: true, inclusion: {in: 0..4}
     validates :title, presence: true
 
-    enum muscle: %i{chest abs back arm leg}
+    #enum muscle: %i{chest abs back arm leg}
 
     scope :recent, -> { order(created_at: :desc)}
 

@@ -11,6 +11,8 @@ br
             h4= movie.title
             a[href="movies/#{movie.id}"]
               | 詳細
+            br
+            br
             #like_form
               - if current_user.like?(movie)
                 = render '/movies/unlike', movie: movie

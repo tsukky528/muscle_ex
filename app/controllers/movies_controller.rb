@@ -12,13 +12,12 @@ class MoviesController < ApplicationController
 
   def like
     Like.create(movie_id: @movie.id, user_id: current_user.id)
-    #p "@@@@@@#{@movie.score}"
-    #@movie.score += 1
-    #@movie.update(movie_params)
+    @movie.update!(score: @movie.score+1)
   end
 
   def unlike
     Like.where(movie_id: @movie.id, user_id: current_user.id).first.destroy
+    @movie.update!(score: @movie.score-1)
   end
 
   def chest
@@ -49,10 +48,10 @@ class MoviesController < ApplicationController
     end
 
     def set_ranking_movies
-      @ranking_movies = Movie.ranking
+      @ranking_movies = Movie.recent.ranking
     end
 
     def movie_params
-      params.require(:movie).permit(:score)
+      params.require(:movie).permit(:title, :muscle, :explain, :score)
     end
 end
