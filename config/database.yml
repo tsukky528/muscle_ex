@@ -18,7 +18,12 @@ default: &default
   socket: /tmp/mysql.sock
 
 development:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  database:
+  pool: 5
+  username:
+  password:
   database: muscle_ex_development
 
 # Warning: The database defined as "test" will be erased and

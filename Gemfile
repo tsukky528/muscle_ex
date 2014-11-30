@@ -66,3 +66,7 @@ group :test do
   gem 'autodoc'
   gem 'json_spec'
 end
+group :production do
+  gem 'pg', '= 0.17.1'
+  gem 'rails_12factor'
+end
