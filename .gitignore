@@ -15,8 +15,7 @@
 /log/*.log
 /tmp
 
-# add myself
-/config/secrets.yml
+
 
 # Created by https://www.gitignore.io
 
