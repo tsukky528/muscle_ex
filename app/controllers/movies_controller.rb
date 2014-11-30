@@ -48,7 +48,7 @@ class MoviesController < ApplicationController
     end
 
     def set_ranking_movies
-      @ranking_movies = Movie.recent.ranking
+      @ranking_movies = Movie.ranking
     end
 
     def movie_params

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   layout 'united'
 
   def show_likes
-    @ranking_movies = Movie.recent.ranking
+    @ranking_movies = Movie.ranking
   end
 
   private
