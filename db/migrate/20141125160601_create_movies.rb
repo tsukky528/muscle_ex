@@ -3,7 +3,10 @@ class CreateMovies < ActiveRecord::Migration
     create_table :movies do |t|
       t.string :movie
       t.text :explain
-      t.string :muscle
+      t.integer :muscle
+      t.string :title
+      t.integer :score, default: 0
+
 
       t.timestamps
     end
