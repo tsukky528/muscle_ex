@@ -18,12 +18,7 @@ default: &default
   socket: /tmp/mysql.sock
 
 development:
-  adapter: postgresql
-  encoding: unicode
-  database:
-  pool: 5
-  username:
-  password:
+  <<: *default
   database: muscle_ex_development
 
 # Warning: The database defined as "test" will be erased and
@@ -53,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: muscle_ex_production
-  username: muscle_ex
-  password: <%= ENV['MUSCLE_EX_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  database:
+  pool: 5
+  username:
+  password:
