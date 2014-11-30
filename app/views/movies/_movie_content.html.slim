@@ -12,7 +12,7 @@ br
               | 詳細
             br
             br
-            - if signed_in?
+            - unless current_user.blank?
               .movie-like
                 div id="like_form_#{movie.id}"
                   - if current_user.like?(movie)
