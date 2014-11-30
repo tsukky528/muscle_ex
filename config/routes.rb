@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  resources :movies, :only => [] do
+  resources :movies, :only => [:index, :show] do
     collection do
       get :chest
       get :abs
@@ -28,5 +28,4 @@ Rails.application.routes.draw do
       post :unlike
     end
   end
-  resources :movies, :only => [:index, :show]
 end
