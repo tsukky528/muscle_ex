@@ -14,7 +14,7 @@ br
             br
             br
             #like_form
-              - if current_user.like?(movie)
+              - if current_user.like?(current_user, movie)
                 = render '/movies/unlike', movie: movie
               - else
                 = render '/movies/like', movie: movie
