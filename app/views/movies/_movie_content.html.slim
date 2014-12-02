@@ -15,7 +15,7 @@ br
             - unless current_user.blank?
               .movie-like
                 div id="like_form_#{movie.id}"
-                  - if current_user.like?(movie)
+                  - if current_user.like?(current_user, movie)
                     = render 'unlike', movie: movie
                   - else
                     = render 'like', movie: movie

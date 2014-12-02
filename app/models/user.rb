@@ -50,8 +50,8 @@ class User < ActiveRecord::Base
     user
   end
 
-  def like?(movie)
-    Like.find_by(movie_id: movie.id)
+  def like?(user, movie)
+    Like.find_by(user_id: user.id, movie_id: movie.id)
   end
 
   def like!(movie)
