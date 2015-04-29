@@ -1,6 +1,6 @@
 == README
 
-筋トレ動画まとめサイト( http://whispering-inlet-1106.herokuapp.com/ )
+筋トレ動画まとめサイト( https://training-movie-matome.herokuapp.com/ )
 
 * 基本的には筋トレ動画を見るのみ
 
